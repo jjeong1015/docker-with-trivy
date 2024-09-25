@@ -23,7 +23,8 @@ jobs:
       - name: Install Trivy
         run: |
           sudo apt-get update && sudo apt-get install -y wget
-          wget https://github.com/aquasecurity/trivy/releases/download/v0.55.2/trivy_Linux-64bit.deb
+          wget https://github.com/aquasecurity/trivy/releases/download/v0.55.1/trivy_Linux-64bit.deb
+          
           sudo dpkg -i trivy_Linux-64bit.deb
 
       # Docker 이미지 스캔 (이미지 이름을 소문자로 변경)
