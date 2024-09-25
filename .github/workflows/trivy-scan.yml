@@ -1,0 +1,31 @@
+name: Security Scan
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  trivy-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 소스 코드 체크아웃
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Docker 이미지 빌드
+      - name: Build Docker image
+        run: docker build -t ScanDockerImageApplication .
+
+      # Trivy 설치
+      - name: Install Trivy
+        run: |
+          sudo apt-get update && sudo apt-get install -y wget
+          wget https://github.com/aquasecurity/trivy/releases/latest/download/trivy_Linux-64bit.deb
+          sudo dpkg -i trivy_Linux-64bit.deb
+
+      # Docker 이미지 스캔
+      - name: Scan Docker image for vulnerabilities
+        run: trivy image ScanDockerImageApplication
