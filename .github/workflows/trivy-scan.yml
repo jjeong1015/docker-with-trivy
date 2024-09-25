@@ -15,9 +15,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Docker 이미지 빌드
+      # Docker 이미지 빌드 (이미지 이름을 소문자로 변경)
       - name: Build Docker image
-        run: docker build -t ScanDockerImageApplication .
+        run: docker build -t scandockerimageapplication .
 
       # Trivy 설치
       - name: Install Trivy
@@ -26,6 +26,6 @@ jobs:
           wget https://github.com/aquasecurity/trivy/releases/latest/download/trivy_Linux-64bit.deb
           sudo dpkg -i trivy_Linux-64bit.deb
 
-      # Docker 이미지 스캔
+      # Docker 이미지 스캔 (이미지 이름을 소문자로 변경)
       - name: Scan Docker image for vulnerabilities
-        run: trivy image ScanDockerImageApplication
+        run: trivy image scandockerimageapplication
