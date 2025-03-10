@@ -1,5 +1,8 @@
 # DockerTrivy
 
+## 기술 스택
+<img src="https://img.shields.io/badge/VirtualBox-183A61?style=for-the-badge&logo=VirtualBox&logoColor=black"><img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=Docker&logoColor=black"><img src="https://img.shields.io/badge/Trivy-1904DA?style=for-the-badge&logo=Trivy&logoColor=black">
+
 ## 🔍 Trivy란?
 Trivy는 오픈소스 보안 스캐너로, 컨테이너 이미지, 파일 시스템, Git 리포지토리 등 다양한 소스에서 보안 취약점을 탐지하는 데 사용한다. Docker 이미지와 같은 컨테이너화된 애플리케이션의 취약점을 스캔하는 데 유용하며, 운영체제 패키지와 애플리케이션 의존성에서 발생할 수 있는 보안 문제를 빠르고 간편하게 찾아낸다.
 
@@ -162,3 +165,16 @@ $ git commit -m "feat: commit message"
 $ git branch -M main
 $ git push -u origin main
 ```
+
+## 🔍 교훈 및 적용
+보안 스캐닝의 중요성 인식
+- Trivy를 통해 컨테이너 이미지의 보안 취약점을 식별하면서 보안 검사는 개발과 배포 과정에서 필수적인 요소라는 점을 다시 한번 깨달았다.<br>
+
+CI/CD 파이프라인과 보안의 연계
+- GitHub Actions를 활용하여 Trivy 보안 검사를 자동화하면서 보안 검사를 개발 워크플로우에 쓸 수 있었다.<br>
+
+경량화된 컨테이너 이미지 구축
+- Dockerfile을 최적화하면서 불필요한 레이어를 줄이고 멀티 스테이지 빌드를 활용하여 보안성과 성능을 모두 고려하는 방법을 익혔다.<br>
+
+## 🌱 발전
+취약점을 식별하는 것뿐만이 아닌 보고된 보안 문제를 해결하는 방법을 탐색하는 능력이 향상되었다. 
